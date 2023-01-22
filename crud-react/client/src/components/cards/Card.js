@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import CardGame from "./CardGame";
+import CardList from "./CardList";
+import FormDialog from "../dialog/FormDialog";
 
-function Card(){
-    const [listGames, setListGames] = useState();
+function Card() {    
+    const [games, setGames] = useState();
     
-    useEffect(()=> {
+    useEffect(() => {
         Axios.get("http://localhost:3001/getCards")
-        .then((response)=>{
-          setListGames(response.data);
+        .then((response) => {
+            setGames(response.data);
         });
-      }, []);
+    }, []);
 
-    return(
-        <div>
-        {typeof listGames !== "undefined" &&
-            listGames.map((value) =>{
-        return <CardGame></CardGame>
-            })}
+    return (
+        <div className="">
+            {typeof games !== "undefined" && <CardList games={games} />}
         </div>
+        
     );
-};
+}
 
 export default Card;
