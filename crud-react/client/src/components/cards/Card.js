@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import CardList from "./CardList";
-import FormDialog from "../dialog/FormDialog";
 
 function Card() {    
     const [games, setGames] = useState();

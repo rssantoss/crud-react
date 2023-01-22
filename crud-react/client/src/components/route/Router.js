@@ -6,8 +6,8 @@ import Register from '../register/Register';
 function Router() {
     return (
         <Routes>
-            <Route path='/' element={<Register/>} />
-            <Route path='/cards' element={<Card/>} />
+            <Route path='/' element={<Register />} />
+            <Route path='/cards' element={<Card />} />
         </Routes>
     )
 }
