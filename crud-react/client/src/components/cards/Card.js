@@ -13,8 +13,10 @@ function Card() {
     }, []);
 
     return (
-        <div className="">
+        <div className="min-h-screen bg-indigo-100">
+            <div className="">
             {typeof games !== "undefined" && <CardList games={games} />}
+            </div>
         </div>
         
     );
